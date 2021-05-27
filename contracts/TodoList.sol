@@ -23,7 +23,7 @@ contract TodoList {
 
     function toggleTodo(uint _itemId) public {
         TodoItem[] memory _todos = todoList[msg.sender];
-        require(_todos.length >= (_itemId - 1), "item doesn't exist");
+        require(_todos.length >= (_itemId + 1), "item doesn't exist");
         todoList[msg.sender][_itemId].checked = !_todos[_itemId].checked;
     }
 
